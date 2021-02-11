@@ -1,0 +1,15 @@
+# Java: Collections Frameworks
+THe Collections framework is a set of classes **and** interfacrs in java that implement commonly used data structures.  bElow is a diagram showing the collections hierarchy. THe most important interfaces are the following:
+- `Iterable` : guarantees that the collection can be iterated over
+- `Collection` : the parent interface of all of the collections, **EXCEPT** Map. (Map is separate from this hierarchy).
+- `List` : is an interface that extends the Collection interface.  It represents data structures that are ordered, similar to an Array. (Lists can be appended to with more elements, and do not have a fixed size.)
+- `Set` : a collection that does not contain duplicate elements. If you try to add an element that already exiosts in the Set, it will simply not add it. (The elements are not necessarily order, except in the case of TreeSet.)
+- `Queue` : a collection that operates on a first-in-first-out (FIFO) basis, just like poeple waiting in a line.
+- `Map` : contains key/value pairs, [for example (0,1), (Key=0, Value = 1)] and **<u>IS</u>** separate from the collection hierarchy.  It however, does belong to the collections framework.
+
+
+![Collections Framework](https://javaconceptoftheday.com/wp-content/uploads/2014/11/CollectionHierarchy.png?x70034)
+
+## Collection v. Collections
+- Collections: is the interface that all of the collections, except may, inherit from 
+- Collections: a utility class that contains various static mehtods that we can use with out collections. (e.g. sort method)
