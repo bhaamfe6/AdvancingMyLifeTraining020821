@@ -1,0 +1,165 @@
+# Java: Topics
+## Fundamentals
+- Features, benefits, and drawbacks of the Java language
+    - WORA (write once, run anywhere)
+        -JDK has a compiler
+            - we are compiling our source code to bytecode
+        - We also have a JRE (which is included w/ the JDK)
+            - This has a JVM
+                - the JVM runs the bytecode
+                - different JVMs for different OSes
+                - But if there is a JVM available for our system, we can run Java programs that were developed on other OSes
+            - Backed by Oracle
+            - Rich APIs (Collections, other built-in runtime libraries)
+            - Object-oriented
+            - Strongly/strictly typed
+            - High level
+                -Easy to read syntax
+                - Memory is handled automatically
+            - Garbage collector
+                - removes objects that do not have any variable referencing them
+                    - with the exception of String literals in the string pool
+            -Verbose
+        -POJOS vs Bean
+        - Stack vs Heap
+            - We have a special location in the heap called the string pool for string literals
+            - not all strings go into the string pool
+        - The stack is where variables are local to a method
+    - Purpose and contents of the JDK, JRE, and JVM
+        -JDK (contains compiler, debugger, other dev tools) + JRE
+        - JRE (contains runtime libraries) + JVM
+        - JVM: used to execute compiled bytecode
+    - main method signature and significance
+        - `public static void main(String[] args)`
+        - is the initial point of execution of our program
+        - JVM automatically calls this method
+        - from this method, we branch off to other parts of our application
+    - compiling and executing java code on the command line
+        - javac somefile.fava: compiles the sdource code file, somefile,java, into a bytecode file, somefile.class
+        - java ClassName: 'runs the class" byu calling the main method inside that class
+    - Primitive Data tyes:
+        - boolean
+        - byte
+        - char
+        - short
+        - int
+        - long
+        - float
+        - double
+    -Operators:
+        - Arithmetic
+            - prefix and postfix operators (e.g. x++, ++x)
+            - logical
+            - ternary
+        - Scopes of varfiables
+            - static
+            - instance
+            - method
+            - block
+        -Control flow statements
+            -for loop
+            - enhanced for looop
+            - if/else
+            - while loop
+            - do-while loop
+            - switch
+        - Class members
+            -Fields (instance / static variables)
+            - Methods (instance / static methods)
+            - Contructors
+                - no-args
+                    - inserted by default if no other constructors are specified
+                    - if another constructor is defined, we need to define this one ourselves if we want it parameterized
+                        - contain parameters, usually used to set values at instantiation of an object
+                    - copy constructor
+                        - creates a new objectd with the same properties as another object
+    - Access Modifiers:
+        - public: accessible anywhere
+        - protected: accessible inside the same package or any subclasses that exist outside the packe
+        -default: inside the same package
+        - private: inside the same class only
+    - Nonaccess Modifiers:
+        - static: used for variable and methods. If they are static, that means they belong to the class itself, static variable would be accessible directly by ClassName,variablename.  Any objects of the class would share the same variable between them.
+        - final: used for classes, methods, and variables.
+            - final classes cannot be extended
+            - final methods cannot be overriden
+            - final variables cannot be reassigned to another valule
+        - abstract
+            - declares a method as abstract with no implementation
+            - or declares a class as abstract
+        - Packages and imports
+            - what packages are for
+            - why we need to import classes
+            - static imports
+        - this and supper keywords
+            - "method invocation: (super() and this() )
+            - this () used for constructor chaining
+            - super() used to call constructors in parent
+        - this.<> used to access a member of "this object"
+        - super.<> used to access a member of "this object" defined in the parent class
+    - JRE library classes
+        - Object class: very important to remember about
+            - is the root of all classes
+            - equals() method
+            - hashcode() method
+            - toStrong() method
+            - know what those methods are used for, especially when we override them in our own classes
+        - System (System,out.println, system,in)
+        - String
+        -StringBuilder not thread-safe
+            -Faster
+        - StringBuffer is thread-safe
+            -Slower
+    - Collection v. Collections
+        - Collections is a utility class
+            - utility classes: contain only static methods that might be helpful to us
+                - for example, Collections. sort(List<> ...)
+    - Arrays (utility class)
+        - Arrays.toString(arr) to print out elements from the array
+            - toString in this case is a static method
+                - not to be confused with toString from the object class, which is soemthing we override and is an instance method
+    - Wrapper Classes
+        - Autoboxing / unboxing - primitive to wrapper / wrapper to primitive automatic conversion
+        - Big reason of using wrapper classes is to be able to store "primitives" inside different Collections
+            - Collections cannot store primitives, only objects
+    - Varargs
+        - go at the end of a method's parameter list
+        - treated as an array
+
+# OOP
+- OOP Principles
+    - good acronym to remember: "APIE"
+    - Abstraction 
+        - Abstract classes
+        - Interfaces
+    - Polymorphism
+        - Method Overriding (runtime polymorphism)
+        - Method Overloading (comopile-time polymorphism)
+    - Inheritance
+    - can extend only one class
+    - can implement multiple interfaces
+    - inheritance creates a hierarchy
+- Encapsulation
+    - Using access modifiers with getters/setters
+- Objects v. classes
+    - classes are blueprints
+    - objects are actual instances being created
+- Abstract classes
+    - difference between abstract and concrete classes
+- Interfaces
+    - implicit modifieres for variables
+
+# Annotations
+- `@Ovveride`
+- `@Deprecated`
+- `@SuppressWarings`
+- etc.
+
+# Generics
+- parameterized types
+- often used with different collections
+
+# Exceptions
+- Know the hierarchy
+    - Throwable class
+        - Error class: things you cannot recover from... like running out of memory or StackOverflow

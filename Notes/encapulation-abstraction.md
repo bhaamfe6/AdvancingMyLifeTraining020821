@@ -5,9 +5,9 @@ The principle in OOP of
 2. Hiding and preventing change to an object's data members
 - Prevents arbitrary exrernal changes that could cause an object to be in a nivalid/inconsistent state  - e.g. imagine we have a Person class, and some code arbitrarily changes a person object's age to a negative value 
 
-Encapulsation introduces the idea of ***getter*** and ***setter*** methods. 
+Encapsulation introduces the idea of ***getter*** and ***setter*** methods. 
 - Getter methods are used to access private members from outside
-- Setter methodsd would allow us to modify these members freom outside.
+- Setter methods would allow us to modify these members from outside.
 
 Access to the getter and setter methods themselves are also controlled by access modifiers.  Usually these getters and setters might be 'public'.
 

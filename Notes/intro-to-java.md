@@ -1,4 +1,4 @@
-# Java
+ # Java
 
 Java is a high-level, compiled, strongly typed object-oriented programming (OOP) language.
 
@@ -20,7 +20,7 @@ Java is a high-level, compiled, strongly typed object-oriented programming (OOP)
 
 # Benefits
 
-- Platform Independe (write once, run anywhere)
+- Platform Independent (write once, run anywhere)
     - made possible through the JVM
         - We have different JVMs for different OSes:
         - Mac
@@ -45,7 +45,7 @@ Added features such as:
 - Functional interfaces
 - Stream API
 - Default methods in interfaces
-- Collecgtors class
+- Collectors class
 - etc.
 
 # JVM v. JRE v. JDK
