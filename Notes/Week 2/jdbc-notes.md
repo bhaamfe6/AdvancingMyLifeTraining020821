@@ -28,3 +28,14 @@ In summary, what we need is
 - A connection string
 - A username
 - A password
+
+Steps to utilize JDBC:
+1. Register the JDBC driver
+2. Open a Connection
+3. Execute JDBC statements using either
+
+- Statement
+- PreparedStatement
+- CallableStatement
+
+4. Retrieve the results that are returned in a `ResultSet` object
