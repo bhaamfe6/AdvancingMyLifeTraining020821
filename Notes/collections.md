@@ -1,5 +1,5 @@
 # Java: Collections Frameworks
-THe Collections framework is a set of classes **and** interfacrs in java that implement commonly used data structures.  bElow is a diagram showing the collections hierarchy. THe most important interfaces are the following:
+THe Collections framework is a set of classes **and** interfacrs in java that implement commonly used data structures.  Below is a diagram showing the collections hierarchy. THe most important interfaces are the following:
 - `Iterable` : guarantees that the collection can be iterated over
 - `Collection` : the parent interface of all of the collections, **EXCEPT** Map. (Map is separate from this hierarchy).
 - `List` : is an interface that extends the Collection interface.  It represents data structures that are ordered, similar to an Array. (Lists can be appended to with more elements, and do not have a fixed size.)

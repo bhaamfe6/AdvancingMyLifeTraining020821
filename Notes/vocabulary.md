@@ -21,11 +21,11 @@
         3. Boolean
         4. Character
         5. String
-- **Inheritanced** - a mechanism in which one object acquires all the properties and behavior of a parent object.  The idea behind inheritance is that you can create new classes that are built upon existing classes.
+- **Inheritance** - a mechanism in which one object acquires all the properties and behavior of a parent object.  The idea behind inheritance is that you can create new classes that are built upon existing classes.
 - **Abstraction** - a way to conceptualize abstract characteristics into a class.
     - Abstract classes- Declared using the <u>abstract</u> keyword and cannot be instantiated.  The are templates for other classes to extend from concrete classes.
 - **Polymorphism** - taking on many forms. Describes how objects can behave differently as in overloading and overriding.
-    - Overloading (comile-time)- using the same method name but specifying different parameters.
+    - Overloading (compile-time)- using the same method name but specifying different parameters.
         - The following are rules related to overloading:
             1. overloaded method must have a different number and/or types of parameters (the order can be different as long as the types are different)  
             2. overloaded methods can throw Exceptions
@@ -56,3 +56,119 @@
     1. Extend prespecified classes, Ex. public class GFG extends javax.servlet.http.HttpServlet{...} is **not** a POJO class.
     2. Implement prespecified interfaces
     3. Contain prespecified annotations.
+
+- **Class** - a specific construct in Java that can associate behavior (methods) and state.  For example, the behavior and state of object or objects of a parent class are inherited by a sub or child class. It serves as a blueprint for an object (which is a 'living' instance) of the class.  
+    - A class can declare both <u>static</u> and <u>instance</u> members (variables and methods).
+    - The following is an example of adding a state to a class:
+        - We'll create a simple variable that will specify the object's id. We'll represent that with an `int` labeled `id`. We'll also create a simple method to get and set the `id` variable.
+    - **Object class** - is a special class that is the root class of all other classes. Essentially, other classes either *directly* or *indirectly* inherit from this `Object` class.
+    
+    - **Wrapper Class** - Wrapper classes allow us to represent primitives as objects.  Conversion between a wrapper object and a primitive occurs automatically
+        - **autoboxing**: primitive to object
+        - **unboxing**: object to primitive
+        - Wrapper utility methods/fiELDS:
+            - **<u>FIELDS<u>**
+            - MAX_VALUE: constant holding the maximum value that that particular wrapper object / primitive can have
+            - MIN_VALUE: constant holding the minimum value that particular wrapper object / primitive can have
+            - SIZE: the number of bits
+            - TYPE: *Class* instance representing primitive type
+            
+            - **<u>METHODS (static methods)</u>**
+            - - valueOf(..): parses some argument into a wrapper object
+            - parseInt(..), parseDouble(..), ... : parse some argument into a primitive of that type
+            - intValue, doubleValue, longValue, etc.: returns value of wrapper object as a primitive
+
+public class ClassOne {
+
+    int id;
+
+    public int getId(){ return id;}
+
+    public void setId(int id) { this.id = id;}
+
+    public static void main (String[] args){
+
+    }
+}
+
+**The Getter and Setter** or getID() method and setID() methods are the behaviors with state return id and this.id = id of  primitive int and the variable id.
+
+The following example updates the main() method and added an additional behavior setID() and a println() method. The setID() method set the ID to 25 when the variable c1 called the setId() method with the c1.setId(25) syntax.
+
+ public static void main (String[] args){
+        ClassOne c1 = new ClassOne();
+        c1.setId(25);
+    
+        System.out.println(c1.getId());
+    }
+}
+
+- **Access Modifier** - Access modifiers control the access to a class, a method, a field or constructor in one class compared to another.
+
+- **public** means the construct is available to all classes in any package   
+- **protected** means the construct is available to any class in the same package or a subclass in any package.   
+- **private** means the construct is only available to the current class.   
+- **default** is the given access when no modifier is specified and it means that only classes in the same package have access to it.
+
+- **Constructor** - a block of code that is executed when a class is instantiated. This block of code is executed once per object that is created. A *<u>constructor always have the same name as the class</u>* and can accept any number of parameters. By default, if you create a class and don't specify a constructor the compiler will generate one for you. The one generated is called the default no-arg constructor.
+
+public class Constructors {
+
+    public Constructors(){
+        System.out.println("Default constructor ran.");
+    }
+
+    public Constructors(int value){
+        System.out.println(value);
+    }
+
+    public static void main(String[] args) {
+        //create instances here
+        Constructors c = new Constructors(5839);
+
+        //use the no-arg constructor
+        Constructors cNoArg = new Constructors();
+    }
+}
+
+In the above example, the class Constructors has a constructor of the same name "Constructors" that is public accessible.  It is a no-arg constructor, which is a default constructor, because there is no parameter argument defined for this constructor.  The next constructor, *public Constructors( int value){* . This constructor example as an argument that is a single int parament named value.  The constructor is instantiated in the main() method by creating a Constructors object assigning a variable c to the object.  The object is instantiated with the new keyword and passing the value of 5839 to the object.  The last constructor is an example of contructor overloading because the  ***parameter has changed*** to no argument.  It is the same object Constructors with the cNoArg variable assignment.
+
+- **Exceptions** - Exceptions are events that occur during execution of programs that disrupt the normal flow of instructions.
+    - exceptional event that occurred inside the execution of a method
+    - Information about the exception, including its type
+    - The state of the program when the exception occurred
+    - Some sort of exception message that may be specified when the exception is thrown
+    - Other custom information
+    - Exceptions can be
+        - Thrown
+        - Caught
+
+    1. Checked Exceptions
+        - The `Exception` class and all of its subclasses (except RuntimeException) are known as checked exceptions
+        - Checked exceptions **MUST** be handled or declared by the programmer, otherwise the code **will not compile**
+
+    2. Unchecked Exceptions
+        - The `RuntimeException` class is a special type of exception that is not required to be handled or declared
+        - Unchecked exceptions are typically reserved for issues such as
+        - `ArithmeticException` for illegal arithmetic, such as dividing by 0
+        - `IndexOutOfBoundsException` if we try to reference an index that is larger than the size of our array
+        - `NullPointerException` if we try to access a field or invoke an instance method on something that is pointing to no object (`null`)
+        - `ClassCastException` if we try to downcast from a parent reference type to some child reference type that is hierarchically valid, but the object is not of that instance.
+    -**Custom Exceptions**
+        - Usually we create custom exceptions to have some sort of descriptive element to the type of exceptional event that is happening. Custom exceptions can either extend RuntimeException, which would make it an `unchecked exception`, or extend Exception, which would make it `checked`.
+    - **Handling Exceptions v. Declaring Exceptions**
+    - Handling: risky code is placed inside a try/catch block
+    - try-catch-finally
+    - In order to handle exceptions, a try/catch block can be used
+    - `try` encloses the code that may throw an exception
+        - for example if we call methods/constructors that have some sort of `throws` declaration
+    - `catch` defines an exception to catch and run the code inside that block if that exception occurs from the code inside the try block
+    - `finally` is used to run a block of code whether an exception is thrown or not. It is always guaranteed to execute unless our program fatally crashes or System.exit() is called.
+
+    - You can have
+        - try-finally
+        - try-catch-catch-...-finally
+        - try-catch-...
+- **Methods** - Methods are blocks of code that only run when they are called. The `public static void main(String[] args)` method, however, is a special method that is called directly by the JVM when we run our application. The purpose of utilizing methods, is to reuse code by defining it only once, and then using it many times. Methods must be declared within a class in Java
+- Methods are defined with an access modifier, followed by any non-access modifiers, the return type, and then the name of the method and parentheses that can define the various parameters a method may accept
+

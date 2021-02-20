@@ -1,5 +1,5 @@
 # Java: Access Modifiers
-Access modifiers help to restrict the accessibility of a class, consttructor, field, or method.  We have four possible access modifiers in Java, from most restrictive to least:
+Access modifiers help to restrict the accessibility of a class, constructor, field, or method.  We have four possible access modifiers in Java, from most restrictive to least:
 1. **Private**
     - Allows for access only within the same class
 2. **Default**

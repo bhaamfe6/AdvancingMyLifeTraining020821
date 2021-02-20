@@ -1,6 +1,7 @@
 # Intro-To-SQL
-## Key Oracle SQL Features
-SQL stands for *Structured Query Language* and is the language used to interact with relational databases - and, increasingly, non-relational databases as well. it is a set of statements with which all programs and users access data in an Oracle Database
+SQL stands for *Structured Query Language* and is the language used to interact with relational databases - and, increasingly, non-relational databases as well. it is a set of statements with which all programs and users access data. ***Relational Database Management System (RDBMS)*** is <u>the basis for SQL</u>, and for all modern databases systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
+
+The data in **RDBMS** is stored in <u>database objects</u> called *tables*. A `table` is a `collection of related data` entries and it consists of columns and rows.
 
 ALthough there are different versions of SQL, to be compiant with ANSI standard, they all support at least the major commands (SELECT, UPDATE, DELETE, INSERT, WHERE) in similar manner.
 
@@ -112,4 +113,33 @@ You can also do calculations as in determining population density which is densi
 
 `SELECT name, population/area FROM world WHERE name IN ('China', 'Nigeria', 'France', 'Australia');`
 
+To simply retrieve all data (columns with field names, and rows) 
+
+`SELECT * FROM customers;`
+
+In the above example the (*) request all data from table name "customers".
+
+The NOT keyword can be used to exclude data for example:
+
+`SELECT * FROM Customers WHERE NOT city = 'Berlin';`
+
+Request to retrieve records where the City is NOT 'Berlin'.
+
+To sort or ORDER all data in a table's specified column alphabetically use
+
+`SELECT * FRFOM customer ORDER BY city;`
+
+Reverse order would be...
+
+`SELECT * FROM customers ORDER BY city DESC;`
+
+To order multiple columns list the columns and separate them with ",".
+
+`SELECT * FROM customer ORDER BY city, population;`
+
+To insert a new record in a table...
+
+`INSERT INTO customer ( CustomerName, Address, City, PostalCode, Country) VALUES ('Hekkan Burger, 'Gateveien 15', 'Sandnes', '4306', 'Norway');`
+
+This example inserts a new record into a table named customer.  The fields have been specified and the data for each field has been specified.
 

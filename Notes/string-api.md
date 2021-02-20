@@ -1,5 +1,5 @@
 # Java: String API
-Strings in Java are not primitive unlike some other programming languages.  They are instead ***immutable*** objects that are instantiated fromthe `String` class.
+Strings in Java are not primitive unlike some other programming languages.  They are instead ***immutable*** objects that are instantiated from the `String` class.
 
 Immutable: means that states or values of the object cannot be altered once created.
 - Accomplished using
@@ -11,7 +11,7 @@ Immutable: means that states or values of the object cannot be altered once crea
     ##String API methods
     - `concat(String str)` : concatenate strings together
         - returns a completely new string
-        - some sgtring + another string
+        - some string + another string
     - `startsWith`
     - `startsWith(String prefix)`
     -`startsWith(String prefix, int offset)`
